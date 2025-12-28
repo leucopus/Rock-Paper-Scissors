@@ -12,7 +12,7 @@ function getComputerChoice() {
     const Choicearr = [Rock, Paper, Scissors];
     const sel = Math.floor(Math.random()* Choicearr.length);
     return  Choicearr[sel] ;
-}
+}   
 function getHumanChoice() {
     const shoot = prompt("Rock, Paper, Scissors");
     return shoot.charAt(0).toUpperCase() + shoot.slice(1).toLowerCase();
@@ -21,39 +21,33 @@ const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 console.log("You: "+humanSelection)
 console.log("Computer :"+computerSelection)
-const round = playRound();
-    function  playRound() {
-      if (computerSelection==Scissors&&humanSelection==Rock) {
-        return W
-    } if (computerSelection==Rock&&humanSelection==Paper) {
-        return W
-    } if (computerSelection==Paper&&humanSelection==Scissors) {
-        return W
-    } if (humanSelection==Scissors&&computerSelection==Rock) {
-        return L
-    } if (humanSelection==Rock&&computerSelection==Paper) {
-        return L
-    } if (humanSelection==Paper&&computerSelection==Scissors) {
-        return L
-    } if (humanSelection==computerSelection||computerSelection===humanSelection){
-        return T
-    } if (humanSelection!==Rock||Paper||Scissors) {
-        return err 
-    }
+function  playRound() {
+    if (computerSelection==Scissors&&humanSelection==Rock ||
+        computerSelection==Rock&&humanSelection==Paper ||
+        computerSelection==Paper&&humanSelection==Scissors) {
+        return W}
+    if (humanSelection==Scissors&&computerSelection==Rock ||
+        humanSelection==Rock&&computerSelection==Paper ||
+        humanSelection==Paper&&computerSelection==Scissors) {
+        return L}
+    if (humanSelection==computerSelection||computerSelection===humanSelection){
+        return T}
+    if (humanSelection!==Rock||Paper||Scissors) {
+        return err}
 }
-if (round==L) {
-        computerScore++;
-} if (round==W) {
-        humanScore++;
-}
-console.log(round);
+if (playRound()==L) {
+        computerScore++}
+if (playRound()==W) {
+        humanScore++}
+console.log(playRound());
 console.log(humanScore)
 console.log(computerScore)
+round
 }
-for (round=1; round<5;round++) {
-    playGame();
-}
-console.log(playGame());
+for (round=0; round<5; round++) {
+    playGame()}
+
+
 
 
 
